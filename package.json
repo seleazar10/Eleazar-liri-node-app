@@ -1,0 +1,20 @@
+{
+  "name": "Eleazar-liri-node-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seleazar10/Eleazar-liri-node-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seleazar10/Eleazar-liri-node-app/issues"
+  },
+  "homepage": "https://github.com/seleazar10/Eleazar-liri-node-app#readme"
+}
