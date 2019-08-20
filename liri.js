@@ -130,16 +130,18 @@ function performTask() {
     console.log(dataSplit);
     var first = dataSplit[0]
     console.log(first)
-    var second = dataSplit[1]
-    console.log(second)
+    input = dataSplit[1]
+    // console.log(second)
 
-    spotify()
+    spotMusic()
+    var myJSON = JSON.stringify(data);
+    console.log(myJSON)
 
   });
 }
 
 function spotMusic(){
-  console.log('works')
+  console.log('spotify function call')
   spotify.search({ type: 'track', query: input }, function (err, data) {
         if (err) {
           return console.log('Error occurred: ' + err);
