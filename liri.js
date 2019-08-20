@@ -1,7 +1,7 @@
 // require("dotenv").config();
 // var keys = require("./keys");
 
-// var fs = require('fs');
+var fs = require('fs');
 
 // var request = require("request");
 
@@ -109,6 +109,29 @@ function movies(){
     console.log(error);
   })
 }
+
+
+function performTask(){
+  var textToInput = ""
+
+  fs.readFile("random.txt", "utf8", function(error, data) {
+
+    // error output
+    if (error) {
+      return console.log(error);
+    }
+  
+    //print data
+    // console.log(data);
+  
+
+    //split data to make it easier to read
+    var dataSplit = data.split(",");
+    console.log(dataSplit);
+  
+  });
+}
+
 
 
 
