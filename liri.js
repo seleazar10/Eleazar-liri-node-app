@@ -16,8 +16,10 @@ var spotify = new Spotify(keys.spotify);
 
 //command
 var operator = process.argv[2];
-var input = process.argv[3]
-
+// var input = process.argv[3]
+var input = process.argv.slice(3).join(' ')
+console.log(input)
+  
 //command switch
 
 if (operator === 'concert-this') {
@@ -90,12 +92,12 @@ function movies() {
       // handle success
 
       var movData = movies.data
-      // console.log(movData);
+      console.log(movData);
       console.log('title: ' + movData.Title);
       console.log(movData.Year);
       console.log(movData.Rated);
       console.log('IMDB Rating: ' + movData.imdbRating);
-      console.log('Rotten Tomatoes Rating: ' + movData.Ratings[2]); //need to stringify
+      console.log('Rotten Tomatoes Rating: ' + movData.Ratings[1].Value);
       console.log('Country Produced: ' + movData.Country);
       console.log('Languages: ' + movData.Language);
       console.log('Plots: ' + movData.Plot);
@@ -110,7 +112,7 @@ function movies() {
 
 
 function performTask() {
-  var textToInput = ""
+  
 
   fs.readFile("random.txt", "utf8", function (error, data) {
 
@@ -131,7 +133,7 @@ function performTask() {
     var second = dataSplit[1]
     console.log(second)
 
-    spotify(second)
+    spotify()
 
   });
 }
@@ -151,10 +153,10 @@ function spotMusic(){
         // console.log(neededData)
 
         for(var i=0; i<5; i++){
-          console.log(neededData[i].artists[0].name)
-          console.log(neededData[i].name)      
-          console.log(neededData[i].preview_url)        
-          console.log(neededData[i].album.name)
+          console.log(neededData[i].artists[0].name) //artist
+          console.log(neededData[i].name) //song     
+          console.log(neededData[i].preview_url)  //Url      
+          console.log(neededData[i].album.name) //albumName
           console.log('---------------------------------')
 
         }
