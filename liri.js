@@ -43,6 +43,8 @@ if(operator === 'concert-this'){
 }
 
 
+//run function for concert-this
+
 function concerts(){
 
   var concertsUrl = "https://rest.bandsintown.com/artists/" + input + "/events?app_id=codingbootcamp";
@@ -77,8 +79,36 @@ function concerts(){
 
 
 
-  // console.log('Name of the venue:')
-  // console.log('Location of the venue:')
-  // console.log('Date:')
+
 }
+
+
+function movies(){
+
+  var moviesUrl = "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=trilogy";
+
+  axios.get(moviesUrl)
+  .then(function (movies) {
+    // handle success
+
+    var movData = movies.data
+    // console.log(movData);
+    console.log('title: ' + movData.Title);
+    console.log(movData.Year);
+    console.log(movData.Rated);
+    console.log('IMDB Rating: '+ movData.imdbRating);
+    console.log('Rotten Tomatoes Rating: '+ movData.Ratings[2]); //need yo stringify
+    console.log('Country Produced: '+ movData.Country);
+    console.log('Languages: '+ movData.Language);
+    console.log('Plots: '+ movData.Plot);
+    console.log('Actors: '+ movData.Actors);
+
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+}
+
+
 
